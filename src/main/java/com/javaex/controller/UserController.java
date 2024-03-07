@@ -28,12 +28,15 @@ public class UserController {
 		
 		
 		if (authUser == null) {
-	        // 인증 실패 시 로그인 폼으로 이동
-	        return "redirect:/user/loginForm"; 
+			// 인증 실패 시 로그인 폼으로 이동
+			return "redirect:/user/loginform"; //브라우저 주소인지, 파일 부르는건지 대소문자 확실히 구분!!
+	        
 	    } else {
-	        // 세션에 올리기
-	        session.setAttribute("authUser", authUser);
-	        return "redirect:/main";
+	    	//세션에 올리기
+			session.setAttribute("authUser", authUser);
+		    return "redirect:/main";
+	        
+	    	 
 	    }
 		
 		
