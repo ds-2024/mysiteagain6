@@ -47,7 +47,7 @@ public class UserController {
 	public String loginform() {
 		System.out.println("UserController.loginform()");
 		
-		return "user/loginForm";
+		return "user/loginForm";//위의 주솟값과 파일위치를 잘 구분해줘라
 		
 	
 	}
