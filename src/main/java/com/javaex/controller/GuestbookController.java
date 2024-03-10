@@ -34,10 +34,28 @@ public class GuestbookController {
 	public String addList(Model model) {
 		System.out.println("GuestbookController.addlist()");
 
-		List<GuestbookVo> guestbookList = guestbookService.exeList();
+		List<GuestbookVo> guestbookList = guestbookService.exeList(); //그릇이름 음식(게스트북서비스의 리스트호출한 결과)을 담은 그릇
 		model.addAttribute("guestbookList", guestbookList);
+		
+		return "/guestbook/addList";
 
-		return "/guestbook/addlist";
-
+	}
+	
+	//삭제폼
+	@RequestMapping(value = "/guestbook/deleteform", method = { RequestMethod.GET, RequestMethod.POST })
+	public String guestDeleteForm() {
+		System.out.println("GuestbookController.guestDeleteForm()");
+		
+		return "/guestbook/deleteForm";
+	}
+	
+	//삭제
+	@RequestMapping(value = "/guestbook/delete", method = { RequestMethod.GET, RequestMethod.POST })
+	public String guestDelete(GuestbookVo guetbookVo) {
+		System.out.println("GuestbookController.guestDelete()");
+		
+		return "";
+		
+		
 	}
 }

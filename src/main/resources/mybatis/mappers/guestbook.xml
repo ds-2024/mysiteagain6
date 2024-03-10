@@ -12,7 +12,7 @@
         (#{name}, #{password}, #{contents}, now())
  
  
- ]]>
+ ]]> <!-- 성공 여부만 확인. 따라서 resultType 필요없음 -->
 	</insert>
 
 	<!-- 리스트 부르기 -->
@@ -24,7 +24,7 @@
 				  ,contents
 				  ,reg_date 
 			from guestbook
-		]]>
+		]]><!-- 기존에 저장된 리스트만 불러오는 거라서 parameterType이 필요없음 -->
 	</select>
 
 
